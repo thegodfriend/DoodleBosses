@@ -52,6 +52,24 @@
     <WriteLinesToFile File="$(ExportDir)/$(TargetName)/SHA.txt" Lines="$(OutputFileString);@(FilesWithHashes->'%(FileHash)');$(OutputZipString);@(ZipFilesWithHashes->'%(FileHash)')" Overwrite="true" Encoding="UTF-8" />
   </Target>
   <ItemGroup>
+    <None Remove="Resources\Sheet_BroodingMawlek.png" />
+    <None Remove="Resources\Sheet_GodTamer.png" />
+    <None Remove="Resources\Sheet_GruzMother.png" />
+    <None Remove="Resources\Sheet_Gruzzer.png" />
+    <None Remove="Resources\Sheet_MantisLord.png" />
+    <None Remove="Resources\Sheet_SoulMaster.png" />
+    <None Remove="Resources\Sheet_SoulWarrior.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\Sheet_BroodingMawlek.png" />
+    <EmbeddedResource Include="Resources\Sheet_GodTamer.png" />
+    <EmbeddedResource Include="Resources\Sheet_GruzMother.png" />
+    <EmbeddedResource Include="Resources\Sheet_Gruzzer.png" />
+    <EmbeddedResource Include="Resources\Sheet_MantisLord.png" />
+    <EmbeddedResource Include="Resources\Sheet_SoulMaster.png" />
+    <EmbeddedResource Include="Resources\Sheet_SoulWarrior.png" />
+  </ItemGroup>
+  <ItemGroup>
     <Reference Include="Assembly-CSharp">
       <HintPath>$(HollowKnightRefs)/Assembly-CSharp.dll</HintPath>
     </Reference>
