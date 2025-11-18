@@ -19,16 +19,16 @@ namespace DoodleBosses
 
             Assembly asm = Assembly.GetExecutingAssembly();
             _dict = new Dictionary<DoodleBosses.Bosses, Sprite>();
-            var tmpTextures = new Dictionary<DoodleBosses.Bosses, string>
+            /*var tmpTextures = new Dictionary<DoodleBosses.Bosses, string>
             {
                 { DoodleBosses.Bosses.GRUZ_MOTHER, "DoodleBosses.Resources.Sheet_GruzMother.png" },
                 { DoodleBosses.Bosses.MANTIS_LORDS, "DoodleBosses.Resources.Sheet_MantisLord.png" },
                 { DoodleBosses.Bosses.SOUL_WARRIOR, "DoodleBosses.Resources.Sheet_SoulWarrior.png" },
-            };
+            };*/
 
-            foreach (var pair in tmpTextures)
+            foreach (DoodleBosses.Bosses boss in DoodleBosses.BossStrings.Keys)//(var pair in tmpTextures)
             {
-                using (Stream s = asm.GetManifestResourceStream(pair.Value))
+                using (Stream s = asm.GetManifestResourceStream("DoodleBosses.Resources.Sheet_" + DoodleBosses.BossStrings[boss] + ".png")) 
                 {
                     if (s != null)
                     {
@@ -42,7 +42,7 @@ namespace DoodleBosses
                         tex.LoadImage(buffer, true);
 
                         // Create sprite from texture
-                        _dict.Add(pair.Key, Sprite.Create(tex, new Rect(0, 0, tex.width, tex.height), new Vector2(0.5f, 0.5f)));
+                        _dict.Add(boss, Sprite.Create(tex, new Rect(0, 0, tex.width, tex.height), new Vector2(0.5f, 0.5f)));
                     }
                 }
             }

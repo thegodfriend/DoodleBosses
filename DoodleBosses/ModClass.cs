@@ -71,7 +71,7 @@ namespace DoodleBosses
             SOUL_WARRIOR
         }
 
-        private static readonly Dictionary<Bosses, string> BossStrings = new Dictionary<Bosses, string>()
+        internal static readonly Dictionary<Bosses, string> BossStrings = new Dictionary<Bosses, string>()
         {
             { Bosses.GRUZ_MOTHER, "GruzMother" },
             { Bosses.MANTIS_LORDS, "MantisLord" },
