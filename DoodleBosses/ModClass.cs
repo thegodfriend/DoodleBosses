@@ -65,10 +65,44 @@ namespace DoodleBosses
         public enum Bosses
         {
             GRUZ_MOTHER,
-            
+            VENGEFLY_KING,
+            FALSE_KNIGHT,
+            HORNET,
+            MASSIVE_MOSS_CHARGER,
+            FLUKEMARM,
             MANTIS_LORDS,
-
-            SOUL_WARRIOR
+            OBLOBBLES,
+            HIVE_KNIGHT,
+            BROKEN_VESSEL,
+            NOSK,
+            WINGED_NOSK,
+            COLLECTOR,
+            CRYSTAL_GUARDIAN,
+            UUMUU,
+            TRAITOR_LORD,
+            GREY_PRINCE_ZOTE,
+            SOUL_WARRIOR,
+            SOUL_MASTER,
+            DUNG_DEFENDER,
+            WHITE_DEFENDER,
+            WATCHER_KNIGHT,
+            NO_EYES,
+            MARMU,
+            GALIEN,
+            MARKOTH,
+            XERO,
+            GORB,
+            ELDER_HU,
+            ORO_MATO,
+            PAINTMASTER_SHEO,
+            GREAT_NAILSAGE_SLY,
+            PURE_VESSEL,
+            GRIMM,
+            NIGHTMARE_KING,
+            ABSOLUTE_RADIANCE,
+            HOLLOW_KNIGHT,
+            RADIANCE,
+            ZOTE
         }
 
         internal static readonly Dictionary<Bosses, string> BossStrings = new Dictionary<Bosses, string>()
