@@ -52,22 +52,82 @@
     <WriteLinesToFile File="$(ExportDir)/$(TargetName)/SHA.txt" Lines="$(OutputFileString);@(FilesWithHashes->'%(FileHash)');$(OutputZipString);@(ZipFilesWithHashes->'%(FileHash)')" Overwrite="true" Encoding="UTF-8" />
   </Target>
   <ItemGroup>
+    <None Remove="Resources\Sheet_BrokenVessel.png" />
     <None Remove="Resources\Sheet_BroodingMawlek.png" />
+    <None Remove="Resources\Sheet_Collector.png" />
+    <None Remove="Resources\Sheet_CrystalGuardian.png" />
+    <None Remove="Resources\Sheet_DungDefender.png" />
+    <None Remove="Resources\Sheet_ElderHu.png" />
+    <None Remove="Resources\Sheet_FalseKnight.png" />
+    <None Remove="Resources\Sheet_Flukemarm.png" />
+    <None Remove="Resources\Sheet_Galien.png" />
     <None Remove="Resources\Sheet_GodTamer.png" />
+    <None Remove="Resources\Sheet_Gorb.png" />
+    <None Remove="Resources\Sheet_GreyPrinceZote.png" />
     <None Remove="Resources\Sheet_GruzMother.png" />
     <None Remove="Resources\Sheet_Gruzzer.png" />
+    <None Remove="Resources\Sheet_HiveKnight.png" />
+    <None Remove="Resources\Sheet_Hornet.png" />
     <None Remove="Resources\Sheet_MantisLord.png" />
+    <None Remove="Resources\Sheet_Markoth.png" />
+    <None Remove="Resources\Sheet_Marmu.png" />
+    <None Remove="Resources\Sheet_MassiveMossCharger.png" />
+    <None Remove="Resources\Sheet_NightmareKing.png" />
+    <None Remove="Resources\Sheet_NoEyes.png" />
+    <None Remove="Resources\Sheet_Nosk.png" />
+    <None Remove="Resources\Sheet_Oblobble.png" />
+    <None Remove="Resources\Sheet_Oblobbles.png" />
+    <None Remove="Resources\Sheet_OroMato.png" />
+    <None Remove="Resources\Sheet_PaintmasterSheo.png" />
+    <None Remove="Resources\Sheet_PureVessel.png" />
     <None Remove="Resources\Sheet_SoulMaster.png" />
     <None Remove="Resources\Sheet_SoulWarrior.png" />
+    <None Remove="Resources\Sheet_TraitorLord.png" />
+    <None Remove="Resources\Sheet_Uumuu.png" />
+    <None Remove="Resources\Sheet_VengeflyKing.png" />
+    <None Remove="Resources\Sheet_WatcherKnight.png" />
+    <None Remove="Resources\Sheet_WhiteDefender.png" />
+    <None Remove="Resources\Sheet_WingedNosk.png" />
+    <None Remove="Resources\Sheet_Xero.png" />
+    <None Remove="Resources\Sheet_Zote.png" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Resources\Sheet_BrokenVessel.png" />
     <EmbeddedResource Include="Resources\Sheet_BroodingMawlek.png" />
+    <EmbeddedResource Include="Resources\Sheet_Collector.png" />
+    <EmbeddedResource Include="Resources\Sheet_CrystalGuardian.png" />
+    <EmbeddedResource Include="Resources\Sheet_DungDefender.png" />
+    <EmbeddedResource Include="Resources\Sheet_ElderHu.png" />
+    <EmbeddedResource Include="Resources\Sheet_FalseKnight.png" />
+    <EmbeddedResource Include="Resources\Sheet_Flukemarm.png" />
+    <EmbeddedResource Include="Resources\Sheet_Galien.png" />
     <EmbeddedResource Include="Resources\Sheet_GodTamer.png" />
+    <EmbeddedResource Include="Resources\Sheet_Gorb.png" />
+    <EmbeddedResource Include="Resources\Sheet_GreyPrinceZote.png" />
     <EmbeddedResource Include="Resources\Sheet_GruzMother.png" />
-    <EmbeddedResource Include="Resources\Sheet_Gruzzer.png" />
+    <EmbeddedResource Include="Resources\Sheet_HiveKnight.png" />
+    <EmbeddedResource Include="Resources\Sheet_Hornet.png" />
     <EmbeddedResource Include="Resources\Sheet_MantisLord.png" />
+    <EmbeddedResource Include="Resources\Sheet_Markoth.png" />
+    <EmbeddedResource Include="Resources\Sheet_Marmu.png" />
+    <EmbeddedResource Include="Resources\Sheet_MassiveMossCharger.png" />
+    <EmbeddedResource Include="Resources\Sheet_NightmareKing.png" />
+    <EmbeddedResource Include="Resources\Sheet_NoEyes.png" />
+    <EmbeddedResource Include="Resources\Sheet_Nosk.png" />
+    <EmbeddedResource Include="Resources\Sheet_Oblobble.png" />
+    <EmbeddedResource Include="Resources\Sheet_OroMato.png" />
+    <EmbeddedResource Include="Resources\Sheet_PaintmasterSheo.png" />
+    <EmbeddedResource Include="Resources\Sheet_PureVessel.png" />
     <EmbeddedResource Include="Resources\Sheet_SoulMaster.png" />
     <EmbeddedResource Include="Resources\Sheet_SoulWarrior.png" />
+    <EmbeddedResource Include="Resources\Sheet_TraitorLord.png" />
+    <EmbeddedResource Include="Resources\Sheet_Uumuu.png" />
+    <EmbeddedResource Include="Resources\Sheet_VengeflyKing.png" />
+    <EmbeddedResource Include="Resources\Sheet_WatcherKnight.png" />
+    <EmbeddedResource Include="Resources\Sheet_WhiteDefender.png" />
+    <EmbeddedResource Include="Resources\Sheet_WingedNosk.png" />
+    <EmbeddedResource Include="Resources\Sheet_Xero.png" />
+    <EmbeddedResource Include="Resources\Sheet_Zote.png" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Assembly-CSharp">
@@ -343,7 +403,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include=".gitignore" />
-    <None Include="ReadMe.md" />
     <None Include="Resources\.gitignore" />
   </ItemGroup>
 </Project>

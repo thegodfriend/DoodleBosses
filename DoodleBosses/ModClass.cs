@@ -50,12 +50,12 @@ namespace DoodleBosses
             [BossStrings[Bosses.ELDER_HU]] = ("GG_Ghost_Hu", "Warrior/Ghost Warrior Hu"),
             [BossStrings[Bosses.ORO_MATO]] = ("GG_Nailmasters", "Brothers/Oro"),
             [BossStrings[Bosses.PAINTMASTER_SHEO]] = ("GG_Painter", "Battle Scene/Sheo Boss"),
-            [BossStrings[Bosses.GREAT_NAILSAGE_SLY]] = ("GG_Sly", "Battle Scene/Sly Boss"),
+            //[BossStrings[Bosses.GREAT_NAILSAGE_SLY]] = ("GG_Sly", "Battle Scene/Sly Boss"),
             [BossStrings[Bosses.PURE_VESSEL]] = ("GG_Hollow_Knight", "Battle Scene/HK Prime"),
-            [BossStrings[Bosses.GRIMM]] = ("GG_Grimm", "Grimm Scene/Grimm Boss"),
+            //[BossStrings[Bosses.GRIMM]] = ("GG_Grimm", "Grimm Scene/Grimm Boss"),
             [BossStrings[Bosses.NIGHTMARE_KING]] = ("GG_Grimm_Nightmare", "Grimm Control/Nightmare Grimm Boss"),
             //[BossStrings[Bosses.HOLLOW_KNIGHT]] = ("", ""),
-            [BossStrings[Bosses.RADIANCE]] = ("GG_Radiance", "Boss Control/Absolute Radiance"),
+            //[BossStrings[Bosses.RADIANCE]] = ("GG_Radiance", "Boss Control/Absolute Radiance"),
             //[BossStrings[Bosses.ZOTE]] = ("", ""),
 
         };
@@ -105,7 +105,7 @@ namespace DoodleBosses
             VENGEFLY_KING,
             BROODING_MAWLEK,
             FALSE_KNIGHT,
-            HORNET,
+            //HORNET, // No sheet
             MASSIVE_MOSS_CHARGER,
             FLUKEMARM,
             MANTIS_LORDS,
@@ -134,12 +134,12 @@ namespace DoodleBosses
             ELDER_HU,
             ORO_MATO,
             PAINTMASTER_SHEO,
-            GREAT_NAILSAGE_SLY,
+            //GREAT_NAILSAGE_SLY, // No Sheet
             PURE_VESSEL,
-            GRIMM,
+            //GRIMM, // Exceptional
             NIGHTMARE_KING,
-            //HOLLOW_KNIGHT,
-            RADIANCE,
+            //HOLLOW_KNIGHT, // No Sheet
+            //RADIANCE, // Exceptional
             //ZOTE
         }
 
@@ -149,7 +149,7 @@ namespace DoodleBosses
             { Bosses.VENGEFLY_KING, "VengeflyKing" },
             { Bosses.BROODING_MAWLEK, "BroodingMawlek" },
             { Bosses.FALSE_KNIGHT, "FalseKnight" },
-            { Bosses.HORNET, "Hornet" },
+            //{ Bosses.HORNET, "Hornet" },
             { Bosses.MASSIVE_MOSS_CHARGER, "MassiveMossCharger" },
             { Bosses.FLUKEMARM, "Flukemarm" },
             { Bosses.MANTIS_LORDS, "MantisLord" },
@@ -178,12 +178,12 @@ namespace DoodleBosses
             { Bosses.ELDER_HU, "ElderHu" },
             { Bosses.ORO_MATO, "OroMato" },
             { Bosses.PAINTMASTER_SHEO, "PaintmasterSheo" },
-            { Bosses.GREAT_NAILSAGE_SLY, "GreatNailsageSly" },
+            //{ Bosses.GREAT_NAILSAGE_SLY, "GreatNailsageSly" },
             { Bosses.PURE_VESSEL, "PureVessel" },
-            { Bosses.GRIMM, "Grimm" },
+            //{ Bosses.GRIMM, "Grimm" },
             { Bosses.NIGHTMARE_KING, "NightmareKing" },
             //{ Bosses.HOLLOW_KNIGHT, "TheHollowKnight" },
-            { Bosses.RADIANCE, "Radiance" },
+            //{ Bosses.RADIANCE, "Radiance" },
             //{ Bosses.ZOTE, "Zote" },
         };
 
