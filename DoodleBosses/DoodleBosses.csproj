@@ -64,6 +64,8 @@
     <None Remove="Resources\Sheet_GodTamer.png" />
     <None Remove="Resources\Sheet_Gorb.png" />
     <None Remove="Resources\Sheet_GreyPrinceZote.png" />
+    <None Remove="Resources\Sheet_Grimm0.png" />
+    <None Remove="Resources\Sheet_Grimm1.png" />
     <None Remove="Resources\Sheet_GruzMother.png" />
     <None Remove="Resources\Sheet_Gruzzer.png" />
     <None Remove="Resources\Sheet_HiveKnight.png" />
@@ -80,6 +82,8 @@
     <None Remove="Resources\Sheet_OroMato.png" />
     <None Remove="Resources\Sheet_PaintmasterSheo.png" />
     <None Remove="Resources\Sheet_PureVessel.png" />
+    <None Remove="Resources\Sheet_Radiance0.png" />
+    <None Remove="Resources\Sheet_Radiance1.png" />
     <None Remove="Resources\Sheet_SoulMaster.png" />
     <None Remove="Resources\Sheet_SoulWarrior.png" />
     <None Remove="Resources\Sheet_TraitorLord.png" />
@@ -104,6 +108,8 @@
     <EmbeddedResource Include="Resources\Sheet_GodTamer.png" />
     <EmbeddedResource Include="Resources\Sheet_Gorb.png" />
     <EmbeddedResource Include="Resources\Sheet_GreyPrinceZote.png" />
+    <EmbeddedResource Include="Resources\Sheet_Grimm0.png" />
+    <EmbeddedResource Include="Resources\Sheet_Grimm1.png" />
     <EmbeddedResource Include="Resources\Sheet_GruzMother.png" />
     <EmbeddedResource Include="Resources\Sheet_HiveKnight.png" />
     <EmbeddedResource Include="Resources\Sheet_Hornet.png" />
@@ -118,6 +124,8 @@
     <EmbeddedResource Include="Resources\Sheet_OroMato.png" />
     <EmbeddedResource Include="Resources\Sheet_PaintmasterSheo.png" />
     <EmbeddedResource Include="Resources\Sheet_PureVessel.png" />
+    <EmbeddedResource Include="Resources\Sheet_Radiance0.png" />
+    <EmbeddedResource Include="Resources\Sheet_Radiance1.png" />
     <EmbeddedResource Include="Resources\Sheet_SoulMaster.png" />
     <EmbeddedResource Include="Resources\Sheet_SoulWarrior.png" />
     <EmbeddedResource Include="Resources\Sheet_TraitorLord.png" />

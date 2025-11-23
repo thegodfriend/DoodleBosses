@@ -52,17 +52,17 @@ namespace DoodleBosses
             [BossStrings[Bosses.PAINTMASTER_SHEO]] = ("GG_Painter", "Battle Scene/Sheo Boss"),
             //[BossStrings[Bosses.GREAT_NAILSAGE_SLY]] = ("GG_Sly", "Battle Scene/Sly Boss"),
             [BossStrings[Bosses.PURE_VESSEL]] = ("GG_Hollow_Knight", "Battle Scene/HK Prime"),
-            //[BossStrings[Bosses.GRIMM]] = ("GG_Grimm", "Grimm Scene/Grimm Boss"),
+            [SpecialStrings[Specials.GRIMM1].Item1] = ("GG_Grimm", "Grimm Scene/Grimm Boss"),
             [BossStrings[Bosses.NIGHTMARE_KING]] = ("GG_Grimm_Nightmare", "Grimm Control/Nightmare Grimm Boss"),
             //[BossStrings[Bosses.HOLLOW_KNIGHT]] = ("", ""),
-            //[BossStrings[Bosses.RADIANCE]] = ("GG_Radiance", "Boss Control/Absolute Radiance"),
+            [SpecialStrings[Specials.RADIANCE1].Item1] = ("GG_Radiance", "Boss Control/Radiance Roar"),//"Boss Control/Absolute Radiance"),
             //[BossStrings[Bosses.ZOTE]] = ("", ""),
 
         };
 
         public Textures SpriteDict { get; private set; }
 
-        public static Sprite GetSprite(Bosses boss) => Instance.SpriteDict.Get(boss);
+        public static Sprite GetSprite(int key, bool special = false) => Instance.SpriteDict.Get(key, special);
 
         public override string GetVersion() => "0.9.0-0";
 
@@ -91,9 +91,19 @@ namespace DoodleBosses
 
             foreach (Bosses boss in BossStrings.Keys)
             {
-                _gameObjects[BossStrings[boss]].GetComponent<tk2dSprite>().GetCurrentSpriteDef().material.mainTexture = GetSprite(boss).texture;
+                _gameObjects[BossStrings[boss]].GetComponent<tk2dSprite>().GetCurrentSpriteDef().material.mainTexture = GetSprite((int)boss).texture;
 
             }
+
+            Log("Finished loading regular bosses");
+
+            foreach (Specials sheet in SpecialStrings.Keys)
+            {
+                Log("Doing special boss " + SpecialStrings[sheet].Item1);
+                _gameObjects[SpecialStrings[sheet].Item1].GetComponent<tk2dSprite>().Collection.materials[SpecialStrings[sheet].Item2].mainTexture = GetSprite((int)sheet, true).texture;
+            }
+
+
             //_gameObjects[BossStrings[Bosses.GRUZ_MOTHER]].GetComponent<tk2dSprite>().GetCurrentSpriteDef().material.mainTexture = GetSprite(Bosses.GRUZ_MOTHER).texture;
 
             Log("Initialized");
@@ -142,6 +152,13 @@ namespace DoodleBosses
             //RADIANCE, // Exceptional
             //ZOTE
         }
+        public enum Specials
+        {
+            GRIMM1,
+            GRIMM2,
+            RADIANCE1,
+            RADIANCE2,
+        }
 
         internal static readonly Dictionary<Bosses, string> BossStrings = new Dictionary<Bosses, string>()
         {
@@ -187,6 +204,12 @@ namespace DoodleBosses
             //{ Bosses.ZOTE, "Zote" },
         };
 
-
+        internal static readonly Dictionary<Specials, ValueTuple<string, int>> SpecialStrings = new Dictionary<Specials, ValueTuple<string, int>>()
+        {
+            { Specials.GRIMM1, ("Grimm", 0) },
+            { Specials.GRIMM2, ("Grimm", 1) },
+            { Specials.RADIANCE1, ("Radiance", 0) },
+            { Specials.RADIANCE2, ("Radiance", 1) },
+        };
     }
 }
