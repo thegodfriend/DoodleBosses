@@ -13,11 +13,11 @@ The culmination of the Doodle Boss project of the HKM community.
 - Godfriend - Brooding Mawlek, God Tamer, Gruz Mother, Vengefly King
 - HooKnows - Oro & Mato
 - Hotspring - Hornet*
-- ikea-ballpit - Radiance*
+- ikea-ballpit - Radiance
 - Jex111 - Galien, Oblobble
 - KaziVuri - The Collector
 - lime - Pure Vessel
-- MinishLink - False Knight (Failed Champion), Grimm*, Nightmare King, Nosk, Winged Nosk
+- MinishLink - False Knight (Failed Champion), Grimm, Nightmare King, Nosk, Winged Nosk
 - MTmerm - Hive Knight, Traitor Lord
 - RocketFire20 - Elder Hu, Paintmaster Sheo, White Defender
 - Torny - No Eyes
