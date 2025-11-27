@@ -63,6 +63,7 @@
     <None Remove="Resources\Sheet_Galien.png" />
     <None Remove="Resources\Sheet_GodTamer.png" />
     <None Remove="Resources\Sheet_Gorb.png" />
+    <None Remove="Resources\Sheet_GreatNailsageSly.png" />
     <None Remove="Resources\Sheet_GreyPrinceZote.png" />
     <None Remove="Resources\Sheet_Grimm0.png" />
     <None Remove="Resources\Sheet_Grimm1.png" />
@@ -107,6 +108,7 @@
     <EmbeddedResource Include="Resources\Sheet_Galien.png" />
     <EmbeddedResource Include="Resources\Sheet_GodTamer.png" />
     <EmbeddedResource Include="Resources\Sheet_Gorb.png" />
+    <EmbeddedResource Include="Resources\Sheet_GreatNailsageSly.png" />
     <EmbeddedResource Include="Resources\Sheet_GreyPrinceZote.png" />
     <EmbeddedResource Include="Resources\Sheet_Grimm0.png" />
     <EmbeddedResource Include="Resources\Sheet_Grimm1.png" />

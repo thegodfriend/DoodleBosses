@@ -50,7 +50,7 @@ namespace DoodleBosses
             [BossStrings[Bosses.ELDER_HU]] = ("GG_Ghost_Hu", "Warrior/Ghost Warrior Hu"),
             [BossStrings[Bosses.ORO_MATO]] = ("GG_Nailmasters", "Brothers/Oro"),
             [BossStrings[Bosses.PAINTMASTER_SHEO]] = ("GG_Painter", "Battle Scene/Sheo Boss"),
-            //[BossStrings[Bosses.GREAT_NAILSAGE_SLY]] = ("GG_Sly", "Battle Scene/Sly Boss"),
+            [BossStrings[Bosses.GREAT_NAILSAGE_SLY]] = ("GG_Sly", "Battle Scene/Sly Boss"),
             [BossStrings[Bosses.PURE_VESSEL]] = ("GG_Hollow_Knight", "Battle Scene/HK Prime"),
             [SpecialStrings[Specials.GRIMM1].Item1] = ("GG_Grimm", "Grimm Scene/Grimm Boss"),
             [BossStrings[Bosses.NIGHTMARE_KING]] = ("GG_Grimm_Nightmare", "Grimm Control/Nightmare Grimm Boss"),
@@ -144,7 +144,7 @@ namespace DoodleBosses
             ELDER_HU,
             ORO_MATO,
             PAINTMASTER_SHEO,
-            //GREAT_NAILSAGE_SLY, // No Sheet
+            GREAT_NAILSAGE_SLY,
             PURE_VESSEL,
             //GRIMM, // Exceptional
             NIGHTMARE_KING,
@@ -195,7 +195,7 @@ namespace DoodleBosses
             { Bosses.ELDER_HU, "ElderHu" },
             { Bosses.ORO_MATO, "OroMato" },
             { Bosses.PAINTMASTER_SHEO, "PaintmasterSheo" },
-            //{ Bosses.GREAT_NAILSAGE_SLY, "GreatNailsageSly" },
+            { Bosses.GREAT_NAILSAGE_SLY, "GreatNailsageSly" },
             { Bosses.PURE_VESSEL, "PureVessel" },
             //{ Bosses.GRIMM, "Grimm" },
             { Bosses.NIGHTMARE_KING, "NightmareKing" },
