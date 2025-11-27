@@ -56,7 +56,7 @@ namespace DoodleBosses
             [BossStrings[Bosses.NIGHTMARE_KING]] = ("GG_Grimm_Nightmare", "Grimm Control/Nightmare Grimm Boss"),
             //[BossStrings[Bosses.HOLLOW_KNIGHT]] = ("", ""),
             [SpecialStrings[Specials.RADIANCE1].Item1] = ("GG_Radiance", "Boss Control/Radiance Roar"),//"Boss Control/Absolute Radiance"),
-            //[BossStrings[Bosses.ZOTE]] = ("", ""),
+            [BossStrings[Bosses.ZOTE]] = ("GG_Mighty_Zote", "Battle Control/First Zote/Zote Boss"),
 
         };
 
@@ -150,7 +150,7 @@ namespace DoodleBosses
             NIGHTMARE_KING,
             //HOLLOW_KNIGHT, // No Sheet
             //RADIANCE, // Exceptional
-            //ZOTE
+            ZOTE
         }
         public enum Specials
         {
@@ -201,7 +201,7 @@ namespace DoodleBosses
             { Bosses.NIGHTMARE_KING, "NightmareKing" },
             //{ Bosses.HOLLOW_KNIGHT, "TheHollowKnight" },
             //{ Bosses.RADIANCE, "Radiance" },
-            //{ Bosses.ZOTE, "Zote" },
+            { Bosses.ZOTE, "Zote" },
         };
 
         internal static readonly Dictionary<Specials, ValueTuple<string, int>> SpecialStrings = new Dictionary<Specials, ValueTuple<string, int>>()
