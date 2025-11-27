@@ -64,7 +64,7 @@ namespace DoodleBosses
 
         public static Sprite GetSprite(int key, bool special = false) => Instance.SpriteDict.Get(key, special);
 
-        public override string GetVersion() => "0.9.1-0";
+        public override string GetVersion() => "0.9.2-0";
 
         public override List<ValueTuple<string, string>> GetPreloadNames()
         {
