@@ -212,12 +212,12 @@ namespace DoodleBosses
                 case "MEGA_MOSS_SUB":
                     if (settings.creditsOn) return "by flame-shadow";
                     return "";
-                case "FLUKE_MOTHER_SUPER":
+                case "FLUKEMARM_SUPER":
                     return "";
-                case "FLUKE_MOTHER_MAIN":
+                case "FLUKEMARM_MAIN":
                     if (settings.doodleNamesOn) return "Mommy Anime";
                     return "Flukemarm";
-                case "FLUKE_MOTHER_SUB":
+                case "FLUKEMARM_SUB":
                     if (settings.creditsOn) return "by Failed Vessel";
                     return "";
                 case "MANTIS_LORDS_SUPER":
@@ -283,7 +283,7 @@ namespace DoodleBosses
                 case "COLLECTOR_MAIN":
                     return "Collector";
                 case "COLLECTOR_SUB":
-                    if (settings.creditsOn) return "KaziVuri";
+                    if (settings.creditsOn) return "by KaziVuri";
                     return "";
                 case "LOBSTER_LANCER_NC_SUPER":
                     if (!settings.doodleNamesOn) return "God";
