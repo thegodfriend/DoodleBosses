@@ -8,9 +8,11 @@ using UObject = UnityEngine.Object;
 
 namespace DoodleBosses
 {
-    public class DoodleBosses : Mod
+    public class DoodleBosses : Mod, IGlobalSettings<Settings>, IMenuMod
     {
         internal static DoodleBosses Instance;
+        public Settings settings = new();
+        public bool ToggleButtonInsideMenu => true;
 
         public static readonly Dictionary<string, GameObject> _gameObjects = new();
 
@@ -106,7 +108,419 @@ namespace DoodleBosses
 
             //_gameObjects[BossStrings[Bosses.GRUZ_MOTHER]].GetComponent<tk2dSprite>().GetCurrentSpriteDef().material.mainTexture = GetSprite(Bosses.GRUZ_MOTHER).texture;
 
+            ModHooks.LanguageGetHook += LanguageGet;
+
             Log("Initialized");
+        }
+
+        public void OnLoadGlobal(Settings _settings) => settings = _settings;
+        public Settings OnSaveGlobal() => settings;
+
+        public List<IMenuMod.MenuEntry> GetMenuData(IMenuMod.MenuEntry? menu)
+        {
+            List<IMenuMod.MenuEntry> menus = new()
+            {
+                new()
+                {
+                    Name = "Show Artist Credits",
+                    Description = "This will override backer credits if those are on",
+                    Values = new string[]
+                    {
+                        Language.Language.Get("MOH_ON", "MainMenu"),
+                        Language.Language.Get("MOH_OFF", "MainMenu"),
+                    },
+                    Saver = i => settings.creditsOn = i == 0,
+                    Loader = () => settings.creditsOn ? 0 : 1
+                },
+                new()
+                {
+                    Name = "Doodle Names",
+                    Description = "Gives all the bosses silly doodle names!",
+                    Values = new string[]
+                    {
+                        Language.Language.Get("MOH_ON", "MainMenu"),
+                        Language.Language.Get("MOH_OFF", "MainMenu"),
+                    },
+                    Saver = i => settings.doodleNamesOn = i == 0,
+                    Loader = () => settings.doodleNamesOn ? 0 : 1
+                },
+            };
+
+            return menus;
+        }
+
+        private static string LanguageGet(string key, string sheetTitle, string orig)
+        {
+            Settings settings = Instance.settings;
+
+            if (!settings.creditsOn && !settings.doodleNamesOn)
+                return orig;
+
+            switch (key)
+            {
+                case "BIGFLY_SUPER":
+                    if (settings.doodleNamesOn) return "Mother of";
+                    return "Gruz";
+                case "BIGFLY_MAIN":
+                    if (settings.doodleNamesOn) return "Sketches";
+                    return "Mother";
+                case "BIGFLY_SUB":
+                    if (settings.creditsOn) return "by Godfriend";
+                    return "";
+                case "VENGEFLY_SUPER":
+                    if (settings.doodleNamesOn) return "Doodle";
+                    return "Vengefly";
+                case "VENGEFLY_MAIN":
+                    return "King";
+                case "VENGEFLY_SUB":
+                    if (settings.creditsOn) return "by Godfriend";
+                    return "";
+                case "MAWLEK_SUPER":
+                    if (settings.doodleNamesOn) return "Doodling";
+                    return "Brooding";
+                case "MAWLEK_MAIN":
+                    return "Mawlek";
+                case "MAWLEK_SUB":
+                    if (settings.creditsOn) return "by Godfriend";
+                    return "";
+                case "FALSE_KNIGHT_SUPER":
+                    return "";
+                case "FALSE_KNIGHT_MAIN":
+                    if (settings.doodleNamesOn) return "False Doodle";
+                    return "False Knight";
+                case "FALSE_KNIGHT_SUB":
+                    if (settings.creditsOn) return "by MinishLink";
+                    return "";
+                case "FALSE_KNIGHT_DREAM_SUPER":
+                    return "Failed";
+                case "FALSE_KNIGHT_DREAM_MAIN":
+                    if (settings.doodleNamesOn) return "Masterpiece";
+                    return "Champion";
+                case "FALSE_KNIGHT_DREAM_SUB":
+                    if (settings.creditsOn) return "by MinishLink";
+                    return "";
+                /*case "HORNET_SUPER":
+                    return "";
+                case "HORNET_MAIN":
+                    return "";
+                case "HORNET_SUB":
+                    return "";*/
+                case "MEGA_MOSS_SUPER":
+                    return "Massive";
+                case "MEGA_MOSS_MAIN":
+                    return "Moss Charger";
+                case "MEGA_MOSS_SUB":
+                    if (settings.creditsOn) return "by flame-shadow";
+                    return "";
+                case "FLUKEMARM_SUPER":
+                    return "";
+                case "FLUKEMARM_MAIN":
+                    if (settings.doodleNamesOn) return "Mommy Anime";
+                    return "Flukemarm";
+                case "FLUKEMARM_SUB":
+                    if (settings.creditsOn) return "by Failed Vessel";
+                    return "";
+                case "MANTIS_LORDS_SUPER":
+                    return "Mantis";
+                case "MANTIS_LORDS_MAIN":
+                    return "Lords";
+                case "MANTIS_LORDS_SUB":
+                    if (settings.creditsOn) return "by flame-shadow";
+                    return "";
+                case "SISTERS_SUPER":
+                    if (settings.creditsOn) return "Sisters";
+                    return "";
+                case "SISTERS_MAIN":
+                    if (settings.creditsOn) return "Of Battle";
+                    return "Sisters";
+                case "SISTERS_SUB":
+                    if (settings.creditsOn) return "by flame-shadow";
+                    return "Of Battle";
+                case "OBLOBBLES_SUPER":
+                    return "";
+                case "OBLOBBLES_MAIN":
+                    if (settings.doodleNamesOn) return "Doodlobles";
+                    return "Oblobbles";
+                case "OBLOBBLES_SUB":
+                    if (settings.creditsOn) return "by Jex111";
+                    return "";
+                case "HIVE_KNIGHT_SUPER":
+                    if (settings.creditsOn) return "Hive";
+                    return "";
+                case "HIVE_KNIGHT_MAIN":
+                    if (settings.creditsOn) return "Knight";
+                    return "Hive";
+                case "HIVE_KNIGHT_SUB":
+                    if (settings.creditsOn) return "by MTmerm";
+                    return "Knight";
+                case "INFECTED_KNIGHT_SUPER":
+                    if (settings.doodleNamesOn) return "Watercolor";
+                    return "Broken";
+                case "INFECTED_KNIGHT_MAIN":
+                    return "Vessel";
+                case "INFECTED_KNIGHT_SUB":
+                    if (settings.creditsOn) return "by Akivaq";
+                    return "";
+                case "INFECTED_KNIGHT_DREAM_SUPER":
+                    if (settings.doodleNamesOn) return "Watercolor";
+                    return "Lost";
+                case "INFECTED_KNIGHT_DREAM_MAIN":
+                    return "Kin";
+                case "INFECTED_KNIGHT_DREAM_SUB":
+                    if (settings.creditsOn) return "by Akivaq";
+                    return "";
+                case "MIMIC_SPIDER_SUPER":
+                    if (settings.doodleNamesOn) return "Sketch";
+                    return "";
+                case "MIMIC_SPIDER_MAIN":
+                    return "Nosk";
+                case "MIMIC_SPIDER_SUB":
+                    if (settings.creditsOn) return "by MinishLink";
+                    return "";
+                case "COLLECTOR_SUPER":
+                    if (settings.doodleNamesOn) return "Art";
+                    return "The";
+                case "COLLECTOR_MAIN":
+                    return "Collector";
+                case "COLLECTOR_SUB":
+                    if (settings.creditsOn) return "by KaziVuri";
+                    return "";
+                case "LOBSTER_LANCER_NC_SUPER":
+                    if (!settings.doodleNamesOn) return "God";
+                    if (!settings.creditsOn) return "";
+                    return "Sketch";
+                case "LOBSTER_LANCER_C_SUPER":
+                    if (settings.doodleNamesOn) return "Sketch";
+                    return "God";
+                case "LOBSTER_LANCER_NC_MAIN":
+                    if (settings.creditsOn) return "Tamer";
+                    return "Sketch";
+                case "LOBSTER_LANCER_C_MAIN":
+                    return "Tamer";
+                case "LOBSTER_LANCER_NC_SUB":
+                    if (settings.creditsOn) return "by Godfriend";
+                    return "Tamer";
+                case "LOBSTER_LANCER_C_SUB":
+                    if (settings.creditsOn) return "by Godfriend";
+                    return orig;
+                case "CRYSTAL_GUARDIAN_SUPER":
+                    if (!settings.creditsOn) return "";
+                    if (!settings.doodleNamesOn) return "Crystal";
+                    return "Sketchy";
+                case "CRYSTAL_GUARDIAN_MAIN":
+                    if (!settings.creditsOn) return "Sketchy";
+                    if (!settings.doodleNamesOn) return "Guardian";
+                    return "CG";
+                case "CRYSTAL_GUARDIAN_SUB":
+                    if (settings.creditsOn) return "by DaveyTheDuck";
+                    return "CG";
+                case "ENRAGED_GUARDIAN_SUPER":
+                    if (settings.doodleNamesOn) return "Sketchy";
+                    return "Enraged";
+                case "ENRAGED_GUARDIAN_MAIN":
+                    if (settings.doodleNamesOn) return "EG";
+                    return "Guardian";
+                case "ENRAGED_GUARDIAN_SUB":
+                    if (settings.creditsOn) return "by DaveyTheDuck";
+                    return "";
+                case "MEGA_JELLY_SUPER":
+                    if (settings.doodleNamesOn) return "Sketch";
+                    return "";
+                case "MEGA_JELLY_MAIN":
+                    if (settings.doodleNamesOn) return "Uuwuu";
+                    return "Uumuu";
+                case "MEGA_JELLY_SUB":
+                    if (settings.creditsOn) return "by AceiestArtist";
+                    return "";
+                case "TRAITOR_LORD_SUPER":
+                    if (settings.doodleNamesOn) return "Doodle";
+                    return "Traitor";
+                case "TRAITOR_LORD_MAIN":
+                    if (settings.doodleNamesOn) return "Traitor";
+                    return "Lord";
+                case "TRAITOR_LORD_SUB":
+                    if (settings.creditsOn) return "by MTmerm";
+                    return "";
+                // GPZ
+                case "MAGE_KNIGHT_SUPER":
+                    if (settings.doodleNamesOn) return "Soul Warrior";
+                    return "Soul";
+                case "MAGE_KNIGHT_MAIN":
+                    if (settings.doodleNamesOn) return "Lite";
+                    return "Warrior";
+                case "MAGE_KNIGHT_SUB":
+                    if (settings.creditsOn) return "by Akivaq";
+                    return "";
+                case "MAGE_LORD_SUPER":
+                    if (settings.doodleNamesOn) return "Doodle";
+                    return "Soul";
+                case "MAGE_LORD_MAIN":
+                    return "Master";
+                case "MAGE_LORD_SUB":
+                    if (settings.creditsOn) return "by Chaktis";
+                    return "";
+                case "MAGE_LORD_DREAM_SUPER":
+                    if (settings.doodleNamesOn) return "Doodle";
+                    return "Soul";
+                case "MAGE_LORD_DREAM_MAIN":
+                    return "Tyrant";
+                case "MAGE_LORD_DREAM_SUB":
+                    if (settings.creditsOn) return "by Chaktis";
+                    return "";
+                case "DUNG_DEFENDER_SUPER":
+                    if (!settings.creditsOn) return "";
+                    if (!settings.doodleNamesOn) return "Dung";
+                    return "Doodle";
+                case "DUNG_DEFENDER_MAIN":
+                    if (settings.creditsOn) return "Defender";
+                    return "Doodle";
+                case "DUNG_DEFENDER_SUB":
+                    if (settings.creditsOn) return "by flame-shadow";
+                    return "Defender";
+                case "WHITE_DEFENDER_SUPER":
+                    if (!settings.creditsOn) return "";
+                    if (!settings.doodleNamesOn) return "White";
+                    return "Wite-Out";
+                case "WHITE_DEFENDER_MAIN":
+                    if (settings.creditsOn) return "Defender";
+                    return "Wite-Out";
+                case "WHITE_DEFENDER_SUB":
+                    if (settings.creditsOn) return "by RocketFire20";
+                    return "Defender";
+                case "BLACK_KNIGHT_SUPER":
+                    if (settings.doodleNamesOn) return "Sharpie";
+                    return "Watcher";
+                case "BLACK_KNIGHT_MAIN":
+                    return "Knight";
+                case "BLACK_KNIGHT_SUB":
+                    if (settings.creditsOn) return "by Dandy";
+                    return "";
+                case "GH_NOEYES_NC_SUPER":
+                case "GH_NOEYES_C_SUPER":
+                //    return "";
+                case "GH_NOEYES_NC_MAIN":
+                case "GH_NOEYES_C_MAIN":
+                    return orig;//"No Eyes";
+                case "GH_NOEYES_NC_SUB":
+                case "GH_NOEYES_C_SUB":
+                    if (settings.creditsOn) return "by Torny";
+                    return orig;//"";
+                case "GH_MUMCAT_NC_SUPER":
+                case "GH_MUMCAT_C_SUPER":
+                    //return "";
+                case "GH_MUMCAT_NC_MAIN":
+                case "GH_MUMCAT_C_MAIN":
+                    return orig;//"";
+                case "GH_MUMCAT_NC_SUB":
+                case "GH_MUMCAT_C_SUB":
+                    if (settings.creditsOn) return "by flame-shadow";
+                    return orig;//"";
+                case "GH_GALIEN_NC_SUPER":
+                case "GH_GALIEN_C_SUPER":
+                    return "";
+                case "GH_GALIEN_NC_MAIN":
+                case "GH_GALIEN_C_MAIN":
+                    if (settings.doodleNamesOn) return "Scrabblien";
+                    return "Galien";
+                case "GH_GALIEN_NC_SUB":
+                case "GH_GALIEN_C_SUB":
+                    if (settings.creditsOn) return "by Jex111";
+                    return orig;//"";
+                case "GH_MARKOTH_NC_SUPER":
+                case "GH_MARKOTH_C_SUPER":
+                    return "";
+                case "GH_MARKOTH_NC_MAIN":
+                case "GH_MARKOTH_C_MAIN":
+                    if (settings.doodleNamesOn) return "Doodlekoth";
+                    return "Markoth";
+                case "GH_MARKOTH_NC_SUB":
+                case "GH_MARKOTH_C_SUB":
+                    if (settings.creditsOn) return "by Chaktis";
+                    return orig;//"";
+                case "GH_XERO_NC_SUPER":
+                case "GH_XERO_C_SUPER":
+                    if (settings.doodleNamesOn) return "Watery";
+                    return "";
+                case "GH_XERO_NC_MAIN":
+                case "GH_XERO_C_MAIN":
+                    return "Xero";
+                case "GH_XERO_NC_SUB":
+                case "GH_XERO_C_SUB":
+                    if (settings.creditsOn) return "by flame-shadow";
+                    return orig;//"";
+                case "GH_ALADAR_NC_SUPER":
+                case "GH_ALADAR_C_SUPER":
+                    if (settings.doodleNamesOn) return "Anime";
+                    return "";
+                case "GH_ALADAR_NC_MAIN":
+                case "GH_ALADAR_C_MAIN":
+                    if (settings.doodleNamesOn) return "Protagonist";
+                    return "Gorb";
+                case "GH_ALADAR_NC_SUB":
+                case "GH_ALADAR_C_SUB":
+                    if (settings.creditsOn) return "by FailedVessel";
+                    return orig;//"";
+                case "GH_HU_NC_SUPER":
+                case "GH_HU_C_SUPER":
+                    return "";
+                case "GH_HU_NC_MAIN":
+                case "GH_HU_C_MAIN":
+                    if (settings.doodleNamesOn) return "Pancake Man";
+                    return "Elder Hu";
+                case "GH_HU_NC_SUB":
+                case "GH_HU_C_SUB":
+                    if (settings.creditsOn) return "by RocketFire20";
+                    return orig;//"";
+                // Oro/Mato
+                case "PAINTMASTER_SUPER":
+                    if (settings.doodleNamesOn) return "Doodlemaster";
+                    return "Paintmaster";
+                case "PAINTMASTER_MAIN":
+                    return "Sheo";
+                case "PAINTMASTER_SUB":
+                    if (settings.creditsOn) return "by RocketFire20";
+                    return "";
+                case "SLY_BOSS_SUPER":
+                    if (settings.doodleNamesOn) return "Pencilsage";
+                    return "Great Nailsage";
+                case "SLY_BOSS_MAIN":
+                    return "Sly";
+                case "SLY_BOSS_SUB":
+                    if (settings.creditsOn) return "by RiverRobot";
+                    return "";
+                // PV
+                case "GRIMM_SUPER":
+                    if (settings.doodleNamesOn) return "Crayon Master";
+                    return "Troupe Master";
+                case "GRIMM_MAIN":
+                    return "Grimm";
+                case "GRIMM_SUB":
+                    if (settings.creditsOn) return "by MinishLink";
+                    return "";
+                case "NIGHTMARE_GRIMM_SUPER":
+                    if (settings.doodleNamesOn) return "Nightmare Crayon";
+                    return "Troupe Master";
+                case "NIGHTMARE_GRIMM_MAIN":
+                    return "Grimm";
+                case "NIGHTMARE_GRIMM_SUB":
+                    if (settings.creditsOn) return "by MinishLink";
+                    return "";
+                // AbsRad
+                case "ZOTE_SUPER":
+                    if (settings.doodleNamesOn) return "Off-hand";
+                    return "Zote";
+                case "ZOTE_MAIN":
+                    if (settings.doodleNamesOn) return "Zote";
+                    return "The Mighty";
+                case "ZOTE_SUB":
+                    if (settings.creditsOn) return "by flame-shadow";
+                    return "";
+                // Rad
+                // THK
+            }
+
+
+            return orig;//key;//
         }
 
         public enum Bosses
