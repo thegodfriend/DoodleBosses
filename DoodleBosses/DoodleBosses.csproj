@@ -87,6 +87,7 @@
     <None Remove="Resources\Sheet_Radiance1.png" />
     <None Remove="Resources\Sheet_SoulMaster.png" />
     <None Remove="Resources\Sheet_SoulWarrior.png" />
+    <None Remove="Resources\Sheet_TheHollowKnight.png" />
     <None Remove="Resources\Sheet_TraitorLord.png" />
     <None Remove="Resources\Sheet_Uumuu.png" />
     <None Remove="Resources\Sheet_VengeflyKing.png" />
@@ -130,6 +131,7 @@
     <EmbeddedResource Include="Resources\Sheet_Radiance1.png" />
     <EmbeddedResource Include="Resources\Sheet_SoulMaster.png" />
     <EmbeddedResource Include="Resources\Sheet_SoulWarrior.png" />
+    <EmbeddedResource Include="Resources\Sheet_TheHollowKnight.png" />
     <EmbeddedResource Include="Resources\Sheet_TraitorLord.png" />
     <EmbeddedResource Include="Resources\Sheet_Uumuu.png" />
     <EmbeddedResource Include="Resources\Sheet_VengeflyKing.png" />

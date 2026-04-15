@@ -56,7 +56,7 @@ namespace DoodleBosses
             [BossStrings[Bosses.PURE_VESSEL]] = ("GG_Hollow_Knight", "Battle Scene/HK Prime"),
             [SpecialStrings[Specials.GRIMM1].Item1] = ("GG_Grimm", "Grimm Scene/Grimm Boss"),
             [BossStrings[Bosses.NIGHTMARE_KING]] = ("GG_Grimm_Nightmare", "Grimm Control/Nightmare Grimm Boss"),
-            //[BossStrings[Bosses.HOLLOW_KNIGHT]] = ("", ""),
+            [BossStrings[Bosses.HOLLOW_KNIGHT]] = ("Room_Final_Boss_Core", "Boss Control/Hollow Knight Boss"),
             [SpecialStrings[Specials.RADIANCE1].Item1] = ("GG_Radiance", "Boss Control/Radiance Roar"),//"Boss Control/Absolute Radiance"),
             [BossStrings[Bosses.ZOTE]] = ("GG_Mighty_Zote", "Battle Control/First Zote/Zote Boss"),
 
@@ -562,7 +562,7 @@ namespace DoodleBosses
             PURE_VESSEL,
             //GRIMM, // Exceptional
             NIGHTMARE_KING,
-            //HOLLOW_KNIGHT, // No Sheet
+            HOLLOW_KNIGHT, // No Sheet
             //RADIANCE, // Exceptional
             ZOTE
         }
@@ -613,7 +613,7 @@ namespace DoodleBosses
             { Bosses.PURE_VESSEL, "PureVessel" },
             //{ Bosses.GRIMM, "Grimm" },
             { Bosses.NIGHTMARE_KING, "NightmareKing" },
-            //{ Bosses.HOLLOW_KNIGHT, "TheHollowKnight" },
+            { Bosses.HOLLOW_KNIGHT, "TheHollowKnight" },
             //{ Bosses.RADIANCE, "Radiance" },
             { Bosses.ZOTE, "Zote" },
         };
