@@ -516,7 +516,13 @@ namespace DoodleBosses
                     if (settings.creditsOn) return "by flame-shadow";
                     return "";
                 // Rad
-                // THK
+                case "HOLLOW_KNIGHT_SUPER":
+                    if (settings.creditsOn) return "Wisp0468 presents";
+                    return "The";
+                case "HOLLOW_KNIGHT_MAIN":
+                    if (!settings.creditsOn) return "Doodle Knight";
+                    if (!settings.doodleNamesOn) return "The Hollow Knight";
+                    return "The Doodle Knight";
             }
 
 
