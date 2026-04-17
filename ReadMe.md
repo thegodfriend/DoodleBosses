@@ -21,4 +21,5 @@ The culmination of the Doodle Boss project of the HKM community.
 - RiverRobot - Great Nailsage Sly
 - RocketFire20 - Elder Hu, Paintmaster Sheo, White Defender
 - Torny - No Eyes
+- Wisp0468 - The Hollow Knight
 
